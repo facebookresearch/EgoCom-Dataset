@@ -133,12 +133,12 @@ def normalize_and_reduce_peaks(wav, bottom=-1, top=1, look_above_value=0.9,
 
         still_changing = False
         frac_of_wav = np.sum(wav > look_above_value) / float(len(wav))
-        if frac_of_wav < frac_above:  # < frac_above of wav above look_above_value
+        if frac_of_wav < frac_above:  # < frac wav above look_above_value
             wav = smart_clip_top(wav, top=look_above_value)
             still_changing = True
 
         frac_of_wav = np.sum(wav < -1 * look_above_value) / float(len(wav))
-        if frac_of_wav < frac_above:  # < frac_above of wav below -look_above_value
+        if frac_of_wav < frac_above:  # < frac_wav below look_above_value
             wav = smart_clip_bottom(wav, bottom=-1 * look_above_value)
             still_changing = True
 
@@ -365,7 +365,8 @@ def find_noise(wav, samplerate, intensity=99.9, make_fig=False, threshold=0.12):
     # Pool every 0.05 seconds.
     wav_pooled = max_pool_1d(abs_of_median_pooled_wav,
                              pool_size=samplerate // 20)
-    # Anything less than threshold percent of the intensity percentile is detected as noise
+    # Anything less than threshold percent of the intensity percentile is
+    # detected as noise
     cutoff = np.percentile(wav_pooled, intensity) * threshold
     noise_mask = wav_pooled < cutoff
     if make_fig:
