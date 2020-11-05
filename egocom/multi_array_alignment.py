@@ -1,11 +1,18 @@
-#!/usr/bin/env python
-# coding: utf-8
+# Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
 
 # # This library is used to align multiple arrays. 
-# ## For our purpose, we are aligning stereo audio wavs in the form of numpy arrays. The content of the audio is conversation, with multiple conversation participants. We are aligning audio from microphones near each of the conversation participants. Thus the sources are mixed, but each person is loudest in their own microphone.
-# # This library works generally for any alignment problem and does not require audio data, although this is the benchmark dataset that this library was tested on. In particular, this library was used to automatically align the EGOCOM dataset. It does not require any loud constant sound for alignment. It works by locally normalizing each audio file so that all speakers are the same volume, then finds the shifts that maximize the correlation relative to one of the arrays.
-
-# In[1]:
+# Here, we align stereo audio wavs in the form of numpy arrays.
+# Audio is presumed to be humans talking in conversation,
+# with multiple conversation participants.
+# We align audio from microphones near each of the conversation participants.
+# Sources are mixed, but each person is loudest in their own microphone.
+# This library works generally for any alignment problem and does not require
+# audio data, although this is the benchmark dataset that this library was
+# tested on. In particular, this library was used to automatically align the
+# EgoCom dataset. It does not require any loud constant sound for alignment.
+# It works by locally normalizing each audio file so that all speakers are the
+# same volume, then finds the shifts that maximize the correlation relative to
+# one of the arrays.
 
 
 from __future__ import print_function, absolute_import, division, unicode_literals, with_statement # Python 2 compatibility

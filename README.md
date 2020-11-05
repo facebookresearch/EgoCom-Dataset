@@ -30,20 +30,20 @@ The package is structured into two parts: (1) core libraries in egocom/egocom/ a
 
 ## **egocom libraries (in egocom/egocom/):**
 
-* `**multi_array_alignment.py**`** **library
+* `multi_array_alignment.py`
     - Library for automatic multi-array alignment.  
     - For our purpose, we are aligning stereo audio wavs in the form of numpy arrays. The content of the audio is conversation, with multiple conversation participants. We are aligning audio from microphones near each of the conversation participants. Thus the sources are mixed, but each person is loudest in their own microphone.
     - This library works generally for any alignment problem and does not require audio data, although this is the benchmark dataset that this library was tested on. In particular, this library was used to automatically align the EgoCom dataset. It does not require any loud constant sound for alignment. It works by locally normalizing each audio file so that all speakers are the same volume, then finds the shifts that maximize the correlation relative to one of the arrays.
 * `audio.py`
-        * Library supports numerous general audio processing methods including:
-            * playing audio files using sounddevice library
-            * plotting audio with axis capturing time information
-            * normalization, smart-clipping audio within a range, reducing audio peaks
-            * extracting audio tracks (as numpy arrays) from MP4 files.
-            * quantization (max_pooling, average_pooling, median_pooling)
-            * Denoising and identifying noise and removing clicks
-            * computing signal2noise ratio statically and dynamically
-            * simple cosine and butterworth bandpass filtering
+    * Library supports numerous general audio processing methods including:
+        * playing audio files using sounddevice library
+        * plotting audio with axis capturing time information
+        * normalization, smart-clipping audio within a range, reducing audio peaks
+        * extracting audio tracks (as numpy arrays) from MP4 files.
+        * quantization (max_pooling, average_pooling, median_pooling)
+        * Denoising and identifying noise and removing clicks
+        * computing signal2noise ratio statically and dynamically
+        * simple cosine and butterworth bandpass filtering
 * `transcription.py`
     * library for producing automatic global transcription plus speaker identification, where the input is multiple observed audio signals (stereo in our case, but mono works as well) coming from each of multiple speakers.
     * The automatic multi-speaker transcription algorithm is very simple! It looks at same transcribed words that occur from different sources, near in time (less than 0.1 seconds) within a conversation, and only keeps the one with the max confidence score, thus identifying the speaker for that word.

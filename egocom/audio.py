@@ -1,8 +1,14 @@
-#!/usr/bin/env python
-# coding: utf-8
+# Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
 
-# In[1]:
-
+# audio.py supports the following:
+# playing audio files using sounddevice library
+# plotting audio with axis capturing time information
+# normalization, smart-clipping audio within a range, reducing audio peaks
+# extracting audio tracks (as numpy arrays) from MP4 files.
+# quantization (max_pooling, average_pooling, median_pooling)
+# Denoising and identifying noise and removing clicks
+# computing signal2noise ratio statically and dynamically
+# simple cosine and butterworth bandpass filtering
 
 from __future__ import (
     print_function, absolute_import, division,

@@ -1,16 +1,15 @@
+# Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
 
-# coding: utf-8
-
-# ## This library provides helpful functions for our novel state-of-the-art automatic global transcription algorithm.
-# ## The algorithm is very simple! It looks at same transcribed words that occur from different sources, near in time (less than 0.1 seconds) within a conversation, and only keeps the one with the max confidence score, thus identifiying the speaker for that word.
-# ## What this library supports is
+# This library supports functionality needed for global transcription.
+# The global transcription method works by considering transcribed words that
+# co-occur from different sources, near in time (less than 0.1 seconds)
+# within a conversation, and only keeps the one with the max confidence score,
+# thus identifiying the speaker for that word.
+# This library supports:
 # * Automatic generation of subtitles
 # * Finding consecutive values in a list
-# * Identifying duplicate words in a pandas dataframe within a time window threshold
-# * Identify duplicates to remove in pandas dataframe, unveiling the speaker
-
-# In[1]:
-
+# * Identifying duplicate words in a pd.DataFrame within a time window threshold
+# * Identify duplicates to remove in a pd.DataFrame, unveiling the speaker
 
 from __future__ import print_function, absolute_import, division, unicode_literals, with_statement # Python 2 compatibility
 

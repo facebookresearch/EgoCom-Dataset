@@ -1,11 +1,14 @@
-#!/usr/bin/env python
-# coding: utf-8
+# Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
+
+# Creates the hd5 preprocessing egocom features for each future setting that are
+# used by `nn_turntaking_all_experiments.py`
 
 import pickle
 import sys
 import pandas as pd
 import numpy as np
-egocom_loc = "/datasets/cgn/EGOCOM/egocom_features/no_audio/"
+# Set this file path to the preprocessed features.
+egocom_loc = "/datasets/cgn/EGOCOM/egocom_preprocessed_features/"
 seed = 0
 video_info = pd.read_csv("/datasets/cgn/EGOCOM/video_info.csv")
 kinds = ['text', 'video', 'voxaudio']  # ['audio', 'text', 'video', 'voxaudio']

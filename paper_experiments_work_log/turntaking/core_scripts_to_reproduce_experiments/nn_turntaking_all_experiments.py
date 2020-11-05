@@ -1,6 +1,12 @@
-#!/usr/bin/env python
-# coding: utf-
+# Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
 
+# This is the core script used for all experiments in the Turn-taking prediction
+# of the EgoCom paper. This script requires the preprocessed hd5 named as:
+# 'egocom_feature_data_normalized_history_{}_future_{}_binary.hdf5'
+# These are already pre-computed in the Dataset release, but can be recomputed
+# via `nn_preprocess_data_for_training`
+
+# Example calls of this script are provided in `turntaking_script_examples.bash`
 
 # Imports
 # Data processing
@@ -9,8 +15,6 @@ import pandas as pd
 import numpy as np
 # Multiprocessing
 import itertools
-from skorch.callbacks import LRScheduler
-from torch.optim import lr_scheduler
 import torch
 import torch.nn as nn
 # Need these to use EgoCom validation dataset
