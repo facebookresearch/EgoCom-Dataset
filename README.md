@@ -133,12 +133,12 @@ perspectives in natural conversation enables opportunities for the following res
         word-guessing game, building knowledge graphs of objects and
         properties, game bots
     -   Throughout the dataset we ask questions like:
-        -   What's that called? (pointing, the answer names the object)
-        -   What shape is the <object>? (pointing, the question
+       *   What's that called? (pointing, the answer names the object)
+       *   What shape is the <object>? (pointing, the question
             indirectly names the object)
-        -   What color is the <object>? (after first establishing the
+       *   What color is the <object>? (after first establishing the
             name of the object)
-        -   Name the <object> &lt;relative position to (e.g. on top
+       *   Name the <object> &lt;relative position to (e.g. on top
             of)&gt; the <object>?
 * **Conversational predictive tasks**
     -   Automatic Question-Answering, predict when/who will speak next,
