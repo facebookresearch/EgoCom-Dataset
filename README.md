@@ -109,16 +109,14 @@ the EgoCom dataset.
 Every conversation includes a host, Curtis Northcutt, who directs
 topics. The dataset covers the following topics.
 
--   Teaching, learning, and understanding
--   Playing and teaching how to play card games like poker and blackjack
--   Playing Q/A AI-complete games (similar to games *Heads Up* and
-    *Hedbanz*)
--   Pontification about topics and thought experiments.
--   Discussing things people like (favorite cities, food, seasons,
-    sports, movies, etc)
--   Describing objects in the room spatially and qualitatively
--   Novel discovery question/answering about how things work
--   Interacting, discussing, and looking at mirrors
+*   Teaching, learning, and understanding
+*   Playing and teaching how to play card games like poker and blackjack
+*   Playing Q/A AI-complete games (similar to games *Heads Up* and *Hedbanz*)
+*   Pontification about topics and thought experiments.
+*   Discussing things people like (favorite cities, food, seasons, sports, movies, etc)
+*   Describing objects in the room spatially and qualitatively
+*   Novel discovery question/answering about how things work
+*   Interacting, discussing, and looking at mirrors
 
 ## Research Areas Enabled
 
@@ -127,19 +125,10 @@ opportunities. The combination of egocentric
 video/transcripts/audio from multiple simultaneous and aligned
 perspectives in natural conversation enables opportunities for the following research areas:
 
-* **Artificial Intelligence** (including general AI, vision, and
-    machine learning tasks)
-    -   General AI solutions for the "Heads Up" question-based
-        word-guessing game, building knowledge graphs of objects and
-        properties, game bots
-    -   Throughout the dataset we ask questions like:
-       1.   What's that called? (pointing, the answer names the object)
-       2.   What shape is the <object>? (pointing, the question
-            indirectly names the object)
-       3.  What color is the <object>? (after first establishing the
-            name of the object)
-       4.   Name the <object> &lt;relative position to (e.g. on top
-            of)&gt; the <object>?
+
+* **Artificial Intelligence** 
+    -   General AI solutions for the "Heads Up" question-based word-guessing game, building knowledge graphs of objects and properties, game bots
+    -   Throughout the dataset we ask questions like: "What's that called?", "What shape is the \<object\>?", "What color is the \<object\>?", etc.
 * **Conversational predictive tasks**
     -   Automatic Question-Answering, predict when/who will speak next,
         lip-reading predict speech from video (without audio), etc.
@@ -158,6 +147,7 @@ perspectives in natural conversation enables opportunities for the following res
 * **Human learning, teaching, and pedagogical efficacy**
     -   Automatic identification of teaching styles, meta-understanding
         (understanding when a learner understands), casual inference
+
 
 
 
