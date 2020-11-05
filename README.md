@@ -4,22 +4,18 @@ https//ieeexplore.ieee.org/document/9200754 entitled "EgoCom: A Multi-person Mul
 
 
 
-# Citation
+# Citing EgoCom
 If you use this package or the EgoCom Dataset in your work, please cite:
 
-    @ARTICLE {9200754,
-    author = {C. Northcutt and S. Zha and S. Lovegrove and R. Newcombe},
-    journal = {IEEE Transactions on Pattern Analysis & Machine Intelligence},
-    title = {EgoCom: A Multi-person Multi-modal Egocentric Communications Dataset},
-    year = {2020},
-    volume = {},
-    number = {01},
-    issn = {1939-3539},
-    doi = {10.1109/TPAMI.2020.3025105},
-    publisher = {IEEE Computer Society},
-    address = {Los Alamitos, CA, USA},
-    month = {sep}
-    }
+    @ARTICLE{9200754,
+      author={C. {Northcutt} and S. {Zha} and S. {Lovegrove} and R. {Newcombe}},
+      journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
+      title={EgoCom: A Multi-person Multi-modal Egocentric Communications Dataset}, 
+      year={2020},
+      volume={},
+      number={},
+      pages={1-12},
+      doi={10.1109/TPAMI.2020.3025105}}
     
 # Download the EgoCom Dataset
 [[TODO]]
