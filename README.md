@@ -23,9 +23,177 @@ If you use this package or the EgoCom Dataset in your work, please cite:
 # Download the EgoCom Dataset
 [[TODO]]
 
+
+# Dataset Details
+
+EGOCOM Dataset: multi-perspective, egocentric conversations
+===========================================================
+
+'****A dataset comprising egocentric audio/video/transcript from 2-3
+simultaneous perspectives during natural conversation.****'
+
+''''''''[Curtis G. Northcutt][] (cgn@fb.com, cgn@mit.edu), [Richard
+Newcombe][] (newcombe@fb.com) ''''''''
+
+Dataset Download
+----------------
+
+-   ALL FB employees can access the dataset here (on your devserver):
+    -   <u>/mnt/vol/gfsai-east/ai-group/datasets/EGOCOM/</u>
+-   FRL-Origin building ONLY, we keep a local store here:
+    -   <u>/mnt/surreal\_ssd/datasets/EGOCOM/</u>
+-   Dropbox (Facebook):
+    -   <https://www.dropbox.com/sh/1cympg09x1o6h5o/AAD9VVZyG6P90KQI490JrLfRa?dl=0>
+
+Python package: egocom
+----------------------
+
+Supports audio/video/nlp/asr processing. Available in the /ovrsource
+code base and can be installed with pip as follows:
+
+`>> cd /ovrsource/Research/surreal/scripts/egocom/`  
+`>> pip install -e .`
+
+== Dataset Description = EGOCOM stands for EGOcentric COMmunications.
+EGOCOM is a first-of-its-kind natural conversations dataset containing
+multi-modal human communication data captured simultaneously from the
+participants' egocentric perspectives. For each conversation, the
+dataset provides binaural audio, egocentric video, time-stamped
+word-level transcriptions, and speaker labels. EGOCOM contains 175 mp4
+files making up 39 conversations. For half of the dataset (87 videos),
+conversations are broken up into 5 minute clips. For the other half (88
+videos) contains full conversations between 15 and 30 minutes. Every
+conversation has three participants and either two or three recording
+devices are worn in each conversation.
+
+Data Modalities
+---------------
+
+-   Video (1080p, 30 FPS)
+-   Audio (binaural/stereo 2-channel mp4a/aac, 44,100 samples/second,
+    64-bit)
+-   Transcripts (speaker identification, start time-stamp, end
+    time-stamp)
+
+Topics of Conversation
+----------------------
+
+Every conversation includes a host, Curtis Northcutt, who directs
+topics. The dataset covers the following topics.
+
+-   Teaching, learning, and understanding
+-   Playing and teaching how to play card games like poker and blackjack
+-   Playing Q/A AI-complete games (similar to games *Heads Up* and
+    *Hedbanz*)
+-   Pontification about topics and thought experiments.
+-   Discussing things people like (favorite cities, food, seasons,
+    sports, movies, etc)
+-   Describing objects in the room spatially and qualitatively
+-   Novel discovery question/answering about how things work
+-   Interacting, discussing, and looking at mirrors
+
+Research Areas Enabled
+----------------------
+
+The EGOCOM dataset opens up a diverse array of new research
+opportunities. The powerful combination of egocentric
+video/transcripts/audio from multiple simultaneous and aligned
+perspectives in natural conversation enables new trajectories and
+state-of-the-art opportunities for the following research areas:
+
+-   **Artificial Intelligence** (including general AI, vision, and
+    machine learning tasks)
+    -   General AI solutions for the "Heads Up" question-based
+        word-guessing game, building knowledge graphs of objects and
+        properties, game bots
+    -   Throughout the dataset we ask questions like:
+        -   What's that called? (pointing, the answer names the object)
+        -   What shape is the <object>? (pointing, the question
+            indirectly names the object)
+        -   What color is the <object>? (after first establishing the
+            name of the object)
+        -   Name the <object> &lt;relative position to (e.g. on top
+            of)&gt; the <object>?
+-   **Conversational predictive tasks**
+    -   Automatic Question-Answering, predict when/who will speak next,
+        lip-reading predict speech from video (without audio), etc.
+-   **Natural Language Processing and Understanding (NLP/NLU), and
+    Automatic Speech Recognition (ASR)**
+    -   2+ speaker 2+ sources complete conversation transcription with
+        speaker identification, contextual transcription
+-   **Source separation**
+    -   Multi-model source separation (combining audio and video
+        inputs), audio-only source separation, cocktail party-problem
+        solutions
+-   **Spatial estimation and beam-forming audio analysis**
+    -   Speaker localization, head/body pose estimation, etc.
+-   **Conversation analysis**
+    -   Semantic Analysis (Linguistics), Communication (modeling), etc.
+-   **Human learning, teaching, and pedagogical efficacy**
+    -   Automatic identification of teaching styles, meta-understanding
+        (understanding when a learner understands), casual inference
+
+Dataset Specifications
+----------------------
+
+The following specifications are true for all video/audio/transcripts in
+the EGOCOM dataset.
+
+-   Videos contain 3 speakers wearing glasses (2 in view, 1 is the
+    camera perspective).
+    -   Conversations are comprised of three speakers.
+    -   Although all participants are wearing glasses, sometimes 1
+        person is wearing regular, non-recording prescription glasses
+-   Video/audio captured with Gogloo glasses.
+    -   **Video Format**: RAW 1080P H.264 mp4, framerate of 30 FPS
+        (camera located between eyes)
+    -   **Audio Format**: RAW 2-channel (left and right), 64-bit
+        mp4a/aac (extracted to wav), 44100 samples/second (recorded near
+        ears)
+    -   **Ground Truth Transcripts**: Human transcribed words. Although
+        we use the term *ground truth*, some errors may exist due to
+        human error. Stored as a .csv (267k rows) file with the
+        following columns:
+        -   key - identifies the video in which the word was spoken
+        -   startTime - the time when the word started to be spoken.
+        -   speaker - \[0,1,2\] identifies the speaker
+        -   endTime - the time when the word finished being spoken.
+        -   word - the word spoken
+-   We provide the dataset in the following mp4 sizes
+    -   1080p (1920x1080) uncompressed
+    -   720p (1280x720)
+    -   480p (640x480)
+    -   240p (352x240)
+    -   Example of how we perform the 720p compression:
+
+`ffmpeg -i input.mp4 -s 1280x720 -aspect 1280:720 -vcodec libx264 -crf 20  -threads 12 compressed.mp4`
+
+-   Every conversation includes a host who directs topics.
+-   All conversations are spoken in English (US).
+
+The Future of AI, Our Vision
+----------------------------
+
+To achieve artificial intelligence, we must first **accurately** capture
+the **sensory input data** from which intelligence evolved.
+
+-   **accurately** = egocentrically
+-   **sensory input data** = for now, audio (near ears) and video (near
+    eyes)
+
+Intelligence evolved through our own egocentric sensory perspective, yet
+(artificial) intelligence solutions often assume a nicely pre-processed
+omniscient perspective. Egocentric data is data gathered from the human
+perspective — as was the case in the evolution of human intelligence.
+
+
+# Code Details
+
 **`egocom`** is a Python package for handling egocentric video across multiple participants supporting libraries for audio, transcription, alignment, source separation, NLP, language modeling, video processing, and more. This package was used to create the EgoCom dataset here: https://our.intern.facebook.com/intern/wiki/LiveMaps/EgoCom/
 
 The package is structured into two parts: (1) core libraries in egocom/egocom/ and (2) code using each of those libraries is located in egocom/examples/. The package structure and contents are as follows:
+
+
 
 
 ## **egocom libraries (in egocom/egocom/):**
