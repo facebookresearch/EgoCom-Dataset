@@ -1,4 +1,4 @@
-# EgoCom: A Multi-person Multi-modal Egocentric Communications Dataset
+# EgoCom:A Multi-person Multi-modal Egocentric Communications Dataset
 
 Egocentric Communications (EgoCom) is a first-of-its-kind natural conversations dataset containing multi-modal human communication data captured simultaneously from the participants' egocentric perspectives. The EgoCom dataset includes 38.5 hours of conversations comprised of synchronized embodied stereo audio and egocentric video along with 240,000 ground-truth, time-stamped word-level transcriptions and speaker labels from 34 diverse speakers.
 
@@ -10,7 +10,7 @@ This is the release of the EgoCom Dataset associated with the [T-PAMI paper](htt
 
 ![](assets/gogloo_glasses.png)
 
-# Citing EgoCom
+## Citing EgoCom
 If you use this package or the EgoCom Dataset in your work, please cite:
 
     @ARTICLE{9200754,
@@ -23,7 +23,7 @@ If you use this package or the EgoCom Dataset in your work, please cite:
       pages={1-12},
       doi={10.1109/TPAMI.2020.3025105}}
     
-# Download the EgoCom Dataset
+## Download the EgoCom Dataset
 [[TODO]]
 
 
@@ -127,7 +127,7 @@ opportunities. The combination of egocentric
 video/transcripts/audio from multiple simultaneous and aligned
 perspectives in natural conversation enables opportunities for the following research areas:
 
--   **Artificial Intelligence** (including general AI, vision, and
+* **Artificial Intelligence** (including general AI, vision, and
     machine learning tasks)
     -   General AI solutions for the "Heads Up" question-based
         word-guessing game, building knowledge graphs of objects and
@@ -140,22 +140,22 @@ perspectives in natural conversation enables opportunities for the following res
             name of the object)
         -   Name the <object> &lt;relative position to (e.g. on top
             of)&gt; the <object>?
--   **Conversational predictive tasks**
+* **Conversational predictive tasks**
     -   Automatic Question-Answering, predict when/who will speak next,
         lip-reading predict speech from video (without audio), etc.
--   **Natural Language Processing and Understanding (NLP/NLU), and
+* **Natural Language Processing and Understanding (NLP/NLU), and
     Automatic Speech Recognition (ASR)**
     -   2+ speaker 2+ sources complete conversation transcription with
         speaker identification, contextual transcription
--   **Source separation**
+* **Source separation**
     -   Multi-model source separation (combining audio and video
         inputs), audio-only source separation, cocktail party-problem
         solutions
--   **Spatial estimation and beam-forming audio analysis**
+* **Spatial estimation and beam-forming audio analysis**
     -   Speaker localization, head/body pose estimation, etc.
--   **Conversation analysis**
+* **Conversation analysis**
     -   Semantic Analysis (Linguistics), Communication (modeling), etc.
--   **Human learning, teaching, and pedagogical efficacy**
+* **Human learning, teaching, and pedagogical efficacy**
     -   Automatic identification of teaching styles, meta-understanding
         (understanding when a learner understands), casual inference
 
@@ -176,7 +176,7 @@ omniscient perspective. Egocentric data is data gathered from the human
 perspective — as was the case in the evolution of human intelligence.
 
 
-# Code Details
+## Code Details
 
 **`egocom`** is a Python package for handling egocentric video across multiple participants supporting libraries for audio, transcription, alignment, source separation, NLP, language modeling, video processing, and more. This package was used to create the EgoCom dataset here: https://our.intern.facebook.com/intern/wiki/LiveMaps/EgoCom/
 
@@ -185,7 +185,7 @@ The package is structured into two parts: (1) core libraries in `EgoCom-Dataset/
 
 
 
-## **egocom libraries (in egocom/egocom/):**
+### **egocom libraries (in egocom/egocom/):**
 
 * `multi_array_alignment.py`
     - Library for automatic multi-array alignment.  
@@ -213,7 +213,7 @@ The package is structured into two parts: (1) core libraries in `EgoCom-Dataset/
     * This library is used for computing the accuracy of transcription models using 1 - word error rate (wer).
         * wer computation uses the Wagner-Fischer Algorithm to compute the Levenstein distance at both the sentence and word level.
         
-## egocom examples using libraries (in egocom/examples):
+### egocom examples using libraries (in egocom/examples):
 
 * **EgoCom production code and examples (examples/EgoCom_dataset)**
     * `alignment_example.py`
@@ -245,12 +245,12 @@ The package is structured into two parts: (1) core libraries in `EgoCom-Dataset/
             * This file uses Google Speech to Text to transcribe all of the EgoCom audio (as well as ICA source estimates).
             * This script uses smart GET/FETCH HTTP protocols to asynchronously transcribe many audio files in parallel. It repeatedly queries Google's servers, always pushing the max limit of parallel requests it can take, and waits automatically when needed.
     
-# Team
+## Team
 Curtis G. Northcutt, Shengxin Cindy Zha, Steven Lovegrove, and Richard Newcombe
 
-# Contact
+## Contact
 Curtis G. Northcutt, curtis@chipbrain.com
 Steven Lovegrove, stevenlovegrove@fb.com
 
-# License
+## License
 Copyright (c) 2018-2021 Facebook Inc. Released under a modified MIT License. See [LICENSE](LICENSE) for details.
