@@ -1,6 +1,6 @@
 # EgoCom: A Multi-person Multi-modal Egocentric Communications Dataset
 This is the release of the EgoCom Dataset associated with the IEEE Transactions on Pattern Analysis and Machine Intelligence (T-PAMI) publication:
-https//ieeexplore.ieee.org/document/9200754 entitled "EgoCom: A Multi-person Multi-modal Egocentric Communications Dataset" 
+https://ieeexplore.ieee.org/document/9200754 entitled "EgoCom: A Multi-person Multi-modal Egocentric Communications Dataset" 
 
 
 
