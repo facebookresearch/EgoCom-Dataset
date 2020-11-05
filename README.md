@@ -32,4 +32,4 @@ Curtis G. Northcutt, curtis@chipbrain.com
 Steven Lovegrove, stevenlovegrove@fb.com
 
 # License
-Copyright (c) 2018-2021 Facebook Inc. Released under the MIT License. See [LICENSE](LICENSE.md) for details.
+Copyright (c) 2018-2021 Facebook Inc. Released under a modified MIT License. See [LICENSE](LICENSE) for details.
