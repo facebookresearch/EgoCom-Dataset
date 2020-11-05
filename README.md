@@ -1,11 +1,9 @@
 # EgoCom: A Multi-person Multi-modal Egocentric Communications Dataset
 This is the release of the EgoCom Dataset associated with the [T-PAMI paper](https://ieeexplore.ieee.org/document/9200754) entitled "EgoCom: A Multi-person Multi-modal Egocentric Communications Dataset".
 
-<span class="img_container center" style="display: block;">
-    <img alt="test" src="assets/egocom_multi_perspective.png" style="display:block; margin-left: auto; margin-right: auto;" title="caption" />
-    <span class="img_caption" style="display: block; text-align: center;">caption</span>
-</span>
+![](assets/f1.png)
 
+![](assets/f23.png)
 
 ![](assets/gogloo_glasses.png)
 
