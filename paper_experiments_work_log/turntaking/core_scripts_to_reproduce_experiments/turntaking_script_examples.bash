@@ -1,3 +1,4 @@
+# Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
 
 { time CUDA_VISIBLE_DEVICES=0 python3 nn_turntaking_all_experiments.py --param-idx 0 --num-param-blocks 4 --epochs 30  --prediction-task binary; } &> out_0_4_false_false_binary.log &
 tail -f out_0_4_false_false_binary.log;

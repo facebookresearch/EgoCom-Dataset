@@ -1,3 +1,5 @@
+# Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
+
 Running with settings: {'param_idx': 2, 'num_param_blocks': 4, 'use_all_perspectives': False, 'predict_only_host': True, 'include_prior': [True, False], 'prediction_task': 'binary', 'epochs': 40, 'use_crossval': False, 'seed': 0}
 Evaluating settings: 1344 to 2016, of 2688 settings
 torch.Size([38551, 300]) torch.Size([38551]) torch.Size([7534, 300]) torch.Size([7534]) torch.Size([2831, 300]) torch.Size([2831])
