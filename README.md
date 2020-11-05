@@ -122,7 +122,7 @@ topics. The dataset covers the following topics.
 *   Novel discovery question/answering about how things work
 *   Interacting, discussing, and looking at mirrors
 
-## Research Areas Enabled
+## Research Areas Supported by EgoCom
 
 The EGOCOM dataset opens up a diverse array of new research
 opportunities. The combination of egocentric
