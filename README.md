@@ -27,7 +27,8 @@ If you use this package or the EgoCom Dataset in your work, please cite:
 [[TODO]]
 
 
-## The EgoCom Dataset provides Video, Audio, and Text Modalities
+## The EgoCom Dataset Contents
+EgoCom provides Video, Audio, and Text Modalities as well as metadata for each video and pre-trained embedded feature representations, for each video, for all three modalities (video, audio, and text).
 
 *   **Video**
     * 1080p @ 30 FPS, as well as 720p, 480p, 240p for faster downloading / processing)
@@ -59,6 +60,9 @@ If you use this package or the EgoCom Dataset in your work, please cite:
         - train                (*bool*)
         - val                  (*bool*)
         - test                 (*bool*)
+*   **Pre-trained feature embeddings
+    * For every 1 second of each video in EgoCom, we provide text, video, and audio pre-trained feature embeddings.
+    * These feature embeddings can be used to reproduce the results in the [EgoCom Paper](https://ieeexplore.ieee.org/document/9200754). See Section 4.2 for details about how these feature embeddings are computed.
     
 ## Dataset Specifications and Details
 
