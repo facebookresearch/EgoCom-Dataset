@@ -8,7 +8,7 @@
 # Abort on error
 set -e
 
-datasets="egocom1080p_uncompressed, egocom720p, egocom480p, egocom240p, egocom_pretrained_features"
+datasets="egocom1080p_uncompressed, egocom720p, egocom480p, egocom240p, egocom_pretrained_features, egocom_audio_only"
 
 if [[ "$1" == "" || "$2" == "" ]]; then
   echo "usage: $0 <dataset name> <directory>"
@@ -24,13 +24,16 @@ elif [ "$1" == "egocom720p" ]; then
 	parts2=w
 elif [ "$1" == "egocom480p" ]; then
 	parts1=a
-  parts2=q
+  	parts2=q
 elif [ "$1" == "egocom240p" ]; then
 	parts1=a
-  parts2=f
+  	parts2=f
 elif [ "$1" == "egocom_pretrained_features" ]; then
 	parts1=b
-  parts2=a
+  	parts2=a
+elif [ "$1" == "egocom_audio_only" ]; then
+	parts1=a
+  	parts2=e
 else
 	echo "Invalid dataset '$1', must be one of $datasets!"
 	exit 1
