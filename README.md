@@ -59,9 +59,9 @@ This release contains **five variations of the EgoCom dataset** -- the only diff
     -   Compressed 480p (640x480) MP4 videos
 * **egocom240p**  *(total size: **9.5 GB**)*
     -   Compressed 240p (352x240) MP4 videos
-* **egocom_audio_only**  *(total size: **8.4 GB**)*
-    -   Raw original unnormalized audio
-    -   Use this if (1) you need only the audio or (2) your spatial AI / conversational AI task needs the original magnitude of each audio signal)
+* **egocom_audio_only**  *(total size: **17 GB**)*
+    -   Original raw unnormalized, 16-bit, 44.1 kHz, steroeo WAV audio
+    -   Useful if you need audio only or if your spatial AI / conversational AI task needs the original magnitude of each audio signal
 
 We also release **the dataset of pre-trained embedding features** used in the [EgoCom Paper](https://ieeexplore.ieee.org/document/9200754):
 * **egocom_pretrained_features**  *(total size: **47 GB**)*
