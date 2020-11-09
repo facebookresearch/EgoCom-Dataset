@@ -33,7 +33,7 @@ elif [ "$1" == "egocom_pretrained_features" ]; then
   	parts2=a
 elif [ "$1" == "egocom_audio_only" ]; then
 	parts1=a
-  	parts2=e
+  	parts2=j
 else
 	echo "Invalid dataset '$1', must be one of $datasets!"
 	exit 1
