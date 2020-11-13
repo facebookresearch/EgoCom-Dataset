@@ -194,7 +194,7 @@ the **sensory input data** from which intelligence evolved.
     eyes)
 
 
-## Directory explaination of every file in this repository
+## Directory explanation of every file in this repository
 
 Contents of importance are in bold.
 
