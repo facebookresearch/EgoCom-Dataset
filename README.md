@@ -20,6 +20,64 @@ This repo provides:
 
 ![](assets/gogloo_glasses.png)
 
+
+## Directory explanation of every file in this repository
+
+Contents of importance are in bold.
+
+│── [egocom](https://github.com/facebookresearch/EgoCom-Dataset/tree/main/egocom)  |>  (*Core package used to create the EgoCom Dataset, transcribe, and align audio/videos*)  
+│   │── audio.py  |>  (*Audio (.wav) utilty functions*)  
+│   │── multi_array_alignment.py  |>  (*Automatic alignment (sychronization) of audio from diff perspectives*)  
+│   │── transcription.py  |>  (*Global transcription using transcripts from multiple perspectives*)  
+│   '── word_error_rate_analysis.py  |>  (*Analyze accuracy of transcription*)  
+│── **[egocom_dataset](https://github.com/facebookresearch/EgoCom-Dataset/tree/main/egocom_dataset)**  |>  (**Data files for the EgoCom Dataset**)  
+│   │── download_egocom.sh  |>  (*Download the EgoCom Dataset using this script*)  
+│   │── ground_truth_transcriptions.csv  |>  (*Human-created transcriptions for EgoCom Dataset*)  
+│   │── speaker_labels  |>  (*(noisy) speaker labels, for every 1 second, for every video in EgoCom dataset*)  
+│   │   │── raw_audio_speaker_labels.json  |>  (***Labels** used in turn-taking experiments in EgoCom paper*)  
+│   │   '── rev_ground_truth_speaker_labels.json  |>  (*Speaker **labels** used in global transcription*)  
+│   '── video_info.csv  |>  (*Important meta-data for each video in EgoCom*)  
+│── [paper_experiments_work_log](https://github.com/facebookresearch/EgoCom-Dataset/tree/main/paper_experiments_work_log)  |>  (*Jupyter notebooks of the experiments and analysis for EgoCom paper*)  
+│   │── [egocom_dataset_creation](https://github.com/facebookresearch/EgoCom-Dataset/tree/main/paper_experiments_work_log/egocom_dataset_creation)  |>  (*Tasks involved in creating the EgoCom dataset*)  
+│   │   │── alignment_example.ipynb  |>  (*Example of automatic alignment of EgoCom videos*)  
+│   │   │── auto_align_egocom_dataset.ipynb  |>  (*Automatically align videos within the same conversation*)  
+│   │   │── create_train_test_val_sets.ipynb  |>  (*Split EgoCom into train, test, val sets*)  
+│   │   │── generate_raw_audio_dataset.ipynb  |>  (*Extract audio wav files from MP4 EgoCom video files*)  
+│   │   '── manual_trimming_and_aligning_start_time  |>  (*Sychronize videos within a conversation*)  
+│   │       │── manually_align_start.ipynb  |>  (*Trim videos in EgoCom to start with speech*)  
+│   │       │── shrink_video.ipynb  |>  (*Create 720p, 420p, and 240p variants of Egocom*)  
+│   │       │── trim_to_same_length.ipynb  |>  (*Make aligned, sychronized videos the same length*)  
+│   │       '── verify_video_alignment.ipynb  |>  (*Check videos within a conversation are sychronized*)  
+│   │── **[global_transcription](https://github.com/facebookresearch/EgoCom-Dataset/tree/main/paper_experiments_work_log/global_transcription)**  |>  (**Application of EgoCom Dataset: 3-person conversation transcription**)  
+│   │   │── auto_global_transcription_methods.ipynb  |>  (*Global transcription experiments*)  
+│   │   │── computing_wer_accuracy  
+│   │   │   '── compute_wer.ipynb  |>  (*Analyze results of global trancription*)  
+│   │   │── create_ground_truth_transcriptions_from_json.ipynb  |>  (*How max mag transcription .csv is made*)  
+│   │   │── create_ground_truth_transcriptions_from_rev.ipynb  |>  (*SHow human transcription .csv is made*)  
+│   │   '── google_speech2text_transcription.ipynb  |>  (*Use Google Speech API to transcribe each video*)  
+│   │── PAPER_FIGURE_stats.ipynb  |>  (*Creates figures in EgoCom paper*)  
+│   │── speaker_recognition_demo.ipynb  |>  (*Visualize speaker recognize as a graph*)  
+│   │── speaker_recognition.ipynb  |>  (*Example of computng speaker recognition accuracy*)  
+│   │── spectrogram_from_audio.ipynb  |>  (*Example plotting spectrogram of an audio signal*)  
+│   '── **[turntaking](https://github.com/facebookresearch/EgoCom-Dataset/tree/main/paper_experiments_work_log/turntaking)**  |>  (**Application of EgoCom Dataset: Predicting turn-taking in conversations**)  
+│       │── ablation_study  |>  (*Code used for ablation studies in the EgoCom paper*)  
+│       │── analysis_figures_for_paper  |>  (*Creates turn-taking figures in EgoCom paper*)  
+│       │   │── analyze_nn_param_optimization.ipynb  |>  (*Finds the neural net hyper-params used*)  
+│       │   │── analyze_nn_training_logs.ipynb  |>  (*Create turn-taking tables in EgoCom paper*)  
+│       │   '── make_figure_task2_vs_task3.ipynb  |>  (*Make figure in EgoCom paper*)  
+│       │── **[core_scripts_to_reproduce_experiments](https://github.com/facebookresearch/EgoCom-Dataset/tree/main/paper_experiments_work_log/turntaking/core_scripts_to_reproduce_experiments)**  
+│       │   │── nn_preprocess_data_for_training.py  |>  (*Pre-compute hdf5 train input per history/future*)  
+│       │   │── nn_turntaking_all_experiments.py  |>  (*Script used to run all turn-taking experiments*)  
+│       │   '── turntaking_script_examples.bash  |>  (*Examples using nn_turntaking_all_experiments.py*)  
+│       │── human_predictions  |>  (*human turn-taking prediction study in EgoCom paper*)  
+│       │   │── analyze_human_predictions.ipynb  |>  (*analysis of human turn-taking results*)  
+│       │   '── test_set  |>  (*csvs with human turn-taking prediction results*)  
+│       │── nn_training_logs  |>  (*neural net training logs from EgoCom turn-taking experiments*)  
+│       '── prepare_features  |>  (*Scripts related to generation of pre-trained features*)  
+│           │── creating_word_vectors.ipynb  |>  (*Creates text embeddings from transcriptions*)  
+│           '── prepare_features.ipynb  |>  (*Concats audio, video, text features*)  
+
+
 ## Citing EgoCom
 If you use this package or the EgoCom Dataset in your work, please cite:
 
@@ -32,7 +90,8 @@ If you use this package or the EgoCom Dataset in your work, please cite:
       number={},
       pages={1-12},
       doi={10.1109/TPAMI.2020.3025105}}
-    
+
+
 ## Download the EgoCom Dataset
 Make sure `pigz` and `wget` are installed:
 ```
@@ -193,62 +252,6 @@ the **sensory input data** from which intelligence evolved.
 -   **sensory input data** = for now, audio (near ears) and video (near
     eyes)
 
-
-## Directory explanation of every file in this repository
-
-Contents of importance are in bold.
-
-│── [egocom](https://github.com/facebookresearch/EgoCom-Dataset/tree/main/egocom)  |>  (*Core package used to create the EgoCom Dataset, transcribe, and align audio/videos*)  
-│   │── audio.py  |>  (*Audio (.wav) utilty functions*)  
-│   │── multi_array_alignment.py  |>  (*Automatic alignment (sychronization) of audio from diff perspectives*)  
-│   │── transcription.py  |>  (*Global transcription using transcripts from multiple perspectives*)  
-│   '── word_error_rate_analysis.py  |>  (*Analyze accuracy of transcription*)  
-│── **[egocom_dataset](https://github.com/facebookresearch/EgoCom-Dataset/tree/main/egocom_dataset)**  |>  (**Data files for the EgoCom Dataset**)  
-│   │── download_egocom.sh  |>  (*Download the EgoCom Dataset using this script*)  
-│   │── ground_truth_transcriptions.csv  |>  (*Human-created transcriptions for EgoCom Dataset*)  
-│   │── speaker_labels  |>  (*(noisy) speaker labels, for every 1 second, for every video in EgoCom dataset*)  
-│   │   │── raw_audio_speaker_labels.json  |>  (***Labels** used in turn-taking experiments in EgoCom paper*)  
-│   │   '── rev_ground_truth_speaker_labels.json  |>  (*Speaker **labels** used in global transcription*)  
-│   '── video_info.csv  |>  (*Important meta-data for each video in EgoCom*)  
-│── [paper_experiments_work_log](https://github.com/facebookresearch/EgoCom-Dataset/tree/main/paper_experiments_work_log)  |>  (*Jupyter notebooks of the experiments and analysis for EgoCom paper*)  
-│   │── [egocom_dataset_creation](https://github.com/facebookresearch/EgoCom-Dataset/tree/main/paper_experiments_work_log/egocom_dataset_creation)  |>  (*Tasks involved in creating the EgoCom dataset*)  
-│   │   │── alignment_example.ipynb  |>  (*Example of automatic alignment of EgoCom videos*)  
-│   │   │── auto_align_egocom_dataset.ipynb  |>  (*Automatically align videos within the same conversation*)  
-│   │   │── create_train_test_val_sets.ipynb  |>  (*Split EgoCom into train, test, val sets*)  
-│   │   │── generate_raw_audio_dataset.ipynb  |>  (*Extract audio wav files from MP4 EgoCom video files*)  
-│   │   '── manual_trimming_and_aligning_start_time  |>  (*Sychronize videos within a conversation*)  
-│   │       │── manually_align_start.ipynb  |>  (*Trim videos in EgoCom to start with speech*)  
-│   │       │── shrink_video.ipynb  |>  (*Create 720p, 420p, and 240p variants of Egocom*)  
-│   │       │── trim_to_same_length.ipynb  |>  (*Make aligned, sychronized videos the same length*)  
-│   │       '── verify_video_alignment.ipynb  |>  (*Check videos within a conversation are sychronized*)  
-│   │── **[global_transcription](https://github.com/facebookresearch/EgoCom-Dataset/tree/main/paper_experiments_work_log/global_transcription)**  |>  (**Application of EgoCom Dataset: 3-person conversation transcription**)  
-│   │   │── auto_global_transcription_methods.ipynb  |>  (*Global transcription experiments*)  
-│   │   │── computing_wer_accuracy  
-│   │   │   '── compute_wer.ipynb  |>  (*Analyze results of global trancription*)  
-│   │   │── create_ground_truth_transcriptions_from_json.ipynb  |>  (*How max mag transcription .csv is made*)  
-│   │   │── create_ground_truth_transcriptions_from_rev.ipynb  |>  (*SHow human transcription .csv is made*)  
-│   │   '── google_speech2text_transcription.ipynb  |>  (*Use Google Speech API to transcribe each video*)  
-│   │── PAPER_FIGURE_stats.ipynb  |>  (*Creates figures in EgoCom paper*)  
-│   │── speaker_recognition_demo.ipynb  |>  (*Visualize speaker recognize as a graph*)  
-│   │── speaker_recognition.ipynb  |>  (*Example of computng speaker recognition accuracy*)  
-│   │── spectrogram_from_audio.ipynb  |>  (*Example plotting spectrogram of an audio signal*)  
-│   '── **[turntaking](https://github.com/facebookresearch/EgoCom-Dataset/tree/main/paper_experiments_work_log/turntaking)**  |>  (**Application of EgoCom Dataset: Predicting turn-taking in conversations**)  
-│       │── ablation_study  |>  (*Code used for ablation studies in the EgoCom paper*)  
-│       │── analysis_figures_for_paper  |>  (*Creates turn-taking figures in EgoCom paper*)  
-│       │   │── analyze_nn_param_optimization.ipynb  |>  (*Finds the neural net hyper-params used*)  
-│       │   │── analyze_nn_training_logs.ipynb  |>  (*Create turn-taking tables in EgoCom paper*)  
-│       │   '── make_figure_task2_vs_task3.ipynb  |>  (*Figure in EgoCom paper comparing task 2 and task 3*)  
-│       │── **[core_scripts_to_reproduce_experiments](https://github.com/facebookresearch/EgoCom-Dataset/tree/main/paper_experiments_work_log/turntaking/core_scripts_to_reproduce_experiments)**  
-│       │   │── nn_preprocess_data_for_training.py  |>  (*Pre-compute hdf5 train input per history/future*)  
-│       │   │── nn_turntaking_all_experiments.py  |>  (*Script used to run all turn-taking experiments*)  
-│       │   '── turntaking_script_examples.bash  |>  (*Examples using nn_turntaking_all_experiments.py*)  
-│       │── human_predictions  |>  (*human turn-taking prediction study in EgoCom paper*)  
-│       │   │── analyze_human_predictions.ipynb  |>  (*analysis of human turn-taking results*)  
-│       │   '── test_set  |>  (*csvs with human turn-taking prediction results*)  
-│       │── nn_training_logs  |>  (*neural net training logs from EgoCom turn-taking experiments*)  
-│       '── prepare_features  |>  (*Scripts related to generation of pre-trained features*)  
-│           │── creating_word_vectors.ipynb  |>  (*Creates text embeddings from transcriptions*)  
-│           '── prepare_features.ipynb  |>  (*Concats audio, video, text features*)  
 
 
 
