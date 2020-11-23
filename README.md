@@ -104,7 +104,9 @@ To download and decompress the EgoCom dataset use the [`egocom_dataset/download_
 ```
 ./download_egocom.sh DATASET /path/to/egocom/
 ```
-where DATASET is one of egocom1080p_uncompressed, egocom720p, egocom480p, egocom240p, egocom_pretrained_features. For example,
+where DATASET is one of egocom1080p_uncompressed, egocom720p, egocom480p, egocom240p, egocom_pretrained_features, egocom_audio_only 
+
+Example usage:
 ```
 ./download_egocom.sh egocom720p .
 ```
